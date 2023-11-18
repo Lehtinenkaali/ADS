@@ -1,0 +1,61 @@
+#Use & for color codes
+#Use %newLine% for new line
+
+Ads:
+  #minutes between ads
+  interval: 30
+  #TODO: Make these more beautiful
+  1:
+    url: 'https://discord.com/invite/sVR5jmY7Pe'
+    header: '&6&m        &6&lModdedVerse&r&6&m           %newLine%%newLine%'
+    click: '&r&6Join our discord! &4&lClick here! %newLine%%newLine%'
+    footer: '&6&m        &6&lModdedVerse&r&6&m           '
+    hover: '&7Click to join our discord!'
+  2:
+    url: 'https://store.moddedverse.com/'
+    header: '&6&m      &6&lModdedVerse&r&6&m           %newLine%%newLine%'
+    click: '&r&6Check out our store! &4&lClick here! %newLine%%newLine%'
+    footer: '&6&m        &6&lModdedVerse&r&6&m           '
+    hover: '&7Click to visit our store!'
+
+  3:
+    url: 'https://www.youtube.com/channel/UC4Z3ZJzjQKx6ZQZ4sXZ6Q1w'
+    header: '&6&m        &6&lModdedVerse&r&6&m           %newLine%%newLine%'
+    click: '&r&6Check out our youtube channel! &4&lClick here! %newLine%%newLine%'
+    footer: '&6&m        &6&lModdedVerse&r&6&m           '
+    hover: '&7Click to visit our youtube channel!'
+
+  4:
+    url: 'https://www.twitch.tv/moddedverse'
+    header: '&6&m        &6&lModdedVerse&r&6&m           %newLine%%newLine%'
+    click: '&r&6Check out our twitch channel! &4&lClick here! %newLine%%newLine%'
+    footer: '&6&m        &6&lModdedVerse&r&6&m           '
+    hover: '&7Click to visit our twitch channel!'
+
+  5:
+    url: 'https://www.instagram.com/moddedverse/'
+    header: '&6&m        &6&lModdedVerse&r&6&m           %newLine%%newLine%'
+    click: '&r&6Check out our instagram page! &4&lClick here! %newLine%%newLine%'
+    footer: '&6&m        &6&lModdedVerse&r&6&m           '
+    hover: '&7Click to visit our instagram page!'
+
+  6:
+    url: 'https://twitter.com/moddedverse'
+    header: '&6&m        &6&lModdedVerse&r&6&m           %newLine%%newLine%'
+    click: '&r&6Check out our twitter page! &4&lClick here! %newLine%%newLine%'
+    footer: '&6&m        &6&lModdedVerse&r&6&m           '
+    hover: '&7Click to visit our twitter page!'
+
+  7:
+    url: 'https://www.facebook.com/moddedverse'
+    header: '&6&m        &6&lModdedVerse&r&6&m           %newLine%%newLine%'
+    click: '&r&6Check out our facebook page! &4&lClick here! %newLine%%newLine%'
+    footer: '&6&m        &6&lModdedVerse&r&6&m           '
+    hover: '&7Click to visit our facebook page!'
+
+
+
+
+
+
+

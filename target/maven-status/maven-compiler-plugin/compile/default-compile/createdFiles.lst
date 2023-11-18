@@ -1,0 +1,4 @@
+com\moddedverse\ads\Main.class
+com\moddedverse\ads\commands\reloadConfig.class
+com\moddedverse\ads\commands\startAd.class
+com\moddedverse\ads\Tasks\sendAD.class
