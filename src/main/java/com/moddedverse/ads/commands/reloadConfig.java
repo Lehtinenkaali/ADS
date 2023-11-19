@@ -1,26 +1,30 @@
 package com.moddedverse.ads.commands;
 
 import com.moddedverse.ads.Main;
-import com.moddedverse.ads.Tasks.sendAD;
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
 public class reloadConfig implements CommandExecutor {
+
+    private final Main plugin;
+
+    public reloadConfig(Main plugin) {
+        this.plugin = plugin;
+    }
 
 
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (command.getName().equalsIgnoreCase("reloadConfig")) {
             startAd.stopAds();
-            commandSender.sendMessage("§6§lReloading config...");
-            Main.getPlugin(Main.class).reloadConfig();
-            commandSender.sendMessage("§6§lConfig reloaded!");
+            if (plugin.getConfig().getBoolean("commands.reloadConfig.commandMessages")) {
+                commandSender.sendMessage(plugin.getConfig().getString("prefix").replace("&", "§") + plugin.getConfig().getString("commands.reloadConfig.reloadingConfig").replace("&", "§"));
+                commandSender.sendMessage(plugin.getConfig().getString("prefix").replace("&", "§") + plugin.getConfig().getString("commands.reloadConfig.reloadedConfig").replace("&", "§"));
+            }
+            plugin.reloadConfig();
             startAd.startAds();
-            Main.getPlugin(Main.class).saveConfig();
             return true;
         }
 

@@ -1,10 +1,36 @@
 #Use & for color codes
 #Use %newLine% for new line
 
-Ads:
-  #minutes between ads
-  interval: 30
-  #TODO: Make these more beautiful
+
+prefix: '&6[&e&lModdedVerse&r&6]&r '
+
+
+commands:
+  reloadConfig:
+    reloadingConfig: '&6Reloading config...'
+    reloadedConfig: '&6Config reloaded!'
+    #Defines if the should send a message when the config is reloaded
+    commandMessages: true
+
+  startAds:
+    startingAds: '&6Starting ads...'
+    startedAds: '&6Ads started!'
+    #Defines if the should send a message when the ads are started
+    commandMessages: true
+  stopAds:
+    stoppingAds: '&6Stopping ads...'
+    stoppedAds: '&6Ads stopped!'
+    #Defines if the should send a message when the ads are stopped
+    commandMessages: true
+
+
+
+ #minutes between ads
+interval: 30
+
+#set the amount of the ads
+ads_amount: 7
+ads:
   1:
     url: 'https://discord.com/invite/sVR5jmY7Pe'
     header: '&6&m        &6&lModdedVerse&r&6&m           %newLine%%newLine%'
@@ -52,6 +78,7 @@ Ads:
     click: '&r&6Check out our facebook page! &4&lClick here! %newLine%%newLine%'
     footer: '&6&m        &6&lModdedVerse&r&6&m           '
     hover: '&7Click to visit our facebook page!'
+
 
 
 

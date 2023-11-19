@@ -6,7 +6,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -24,13 +23,19 @@ public class startAd implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (command.getName().equalsIgnoreCase("startAds")) {
+            if (plugin.getConfig().getBoolean("commands.startAds.commandMessages")) {
+                commandSender.sendMessage(plugin.getConfig().getString("prefix").replace("&", "§") + plugin.getConfig().getString("commands.startAds.startingAds").replace("&", "§"));
+                commandSender.sendMessage(plugin.getConfig().getString("prefix").replace("&", "§") + plugin.getConfig().getString("commands.startAds.startedAds").replace("&", "§"));
+            }
             startAds();
             plugin.saveConfig();
             return true;
         } else if (command.getName().equalsIgnoreCase("stopAds")) {
-            commandSender.sendMessage("§6§lStopping ads...");
+            if (plugin.getConfig().getBoolean("commands.stopAds.commandMessages")) {
+                commandSender.sendMessage(plugin.getConfig().getString("prefix").replace("&", "§") + " " + plugin.getConfig().getString("commands.stopAds.stoppingAds").replace("&", "§"));
+                commandSender.sendMessage(plugin.getConfig().getString("prefix").replace("&", "§") + " " + plugin.getConfig().getString("commands.stopAds.stoppedAds").replace("&", "§"));
+            }
             stopAds();
-            commandSender.sendMessage("§6§lAds stopped!");
             plugin.saveConfig();
             return true;
         }
@@ -39,8 +44,9 @@ public class startAd implements CommandExecutor {
     }
     public static void startAds(){
         sendAD.ads = new sendAD(Main.getPlugin(Main.class));
-        sendAD.ads.runTaskTimer(Main.getPlugin(Main.class), 0, 20L * 60L * Main.getPlugin(Main.class).getConfig().getInt("Ads.interval"));
+        sendAD.ads.runTaskTimer(Main.getPlugin(Main.class), 0, 20L * 60L * Main.getPlugin(Main.class).getConfig().getInt("interval"));
         taskID = sendAD.ads.getTaskId();
+
     }
 
     public static void stopAds(){
